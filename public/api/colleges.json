@@ -1,0 +1,218 @@
+[
+	{
+		"college_image": "https://i.ibb.co/smrKH7s/harvard.jpg",
+		"college_name": "Harvard University",
+		"admission_date": "2023-08-15",
+		"admission_process": "Online application through the official website followed by the SAT/ACT test and interviews.",
+		"events_details": [
+			{
+				"eventName": "Annual Fest",
+				"description": "Celebration of arts and culture"
+			},
+			{
+				"eventName": "Sports Meet",
+				"description": "Intercollegiate sports competitions"
+			},
+			{
+				"eventName": "Workshops",
+				"description": "Skill development sessions"
+			}
+		],
+		"research_history": "Pioneering research in Science and Technology",
+		"sports_details": [
+			{
+				"sportName": "Football",
+				"facilities": "Stadium and training ground"
+			},
+			{
+				"sportName": "Basketball",
+				"facilities": "Indoor court"
+			},
+			{
+				"sportName": "Cricket",
+				"facilities": "Cricket ground"
+			}
+		],
+		"college_rating": 4.5
+	},
+	{
+		"college_image": "https://i.ibb.co/TBhgw5m/oxford.jpg",
+		"college_name": "University of Oxford",
+		"admission_date": "2023-09-01",
+		"admission_process": "Submit an online application via UCAS followed by the Oxford Admissions Test and interviews.",
+		"events_details": [
+			{
+				"eventName": "Cultural Fest",
+				"description": "Celebrating diversity and heritage"
+			},
+			{
+				"eventName": "Debate Competitions",
+				"description": "Intellectual discourse and debates"
+			},
+			{
+				"eventName": "Guest Lectures",
+				"description": "Talks by renowned speakers"
+			}
+		],
+		"research_history": "Strong emphasis on Arts and Humanities research",
+		"sports_details": [
+			{
+				"sportName": "Tennis",
+				"facilities": "Tennis courts"
+			},
+			{
+				"sportName": "Swimming",
+				"facilities": "Indoor swimming pool"
+			},
+			{
+				"sportName": "Rowing",
+				"facilities": "Boathouse on the river"
+			}
+		],
+		"college_rating": 4.2
+	},
+	{
+		"college_image": "https://i.ibb.co/5LdhNrQ/stanford.jpg",
+		"college_name": "Stanford University",
+		"admission_date": "2023-07-20",
+		"admission_process": "Apply online through the Common Application or Coalition Application, and then undergo a holistic review including standardized test scores, letters of recommendation, and essays.",
+		"events_details": [
+			{
+				"eventName": "Tech Fest",
+				"description": "Showcasing innovative technologies"
+			},
+			{
+				"eventName": "Robotics Competitions",
+				"description": "Robots showcase their skills"
+			},
+			{
+				"eventName": "Seminars",
+				"description": "Knowledge-sharing sessions"
+			}
+		],
+		"research_history": "Renowned for cutting-edge Engineering research",
+		"sports_details": [
+			{
+				"sportName": "Volleyball",
+				"facilities": "Indoor volleyball court"
+			},
+			{
+				"sportName": "Badminton",
+				"facilities": "Indoor badminton court"
+			},
+			{
+				"sportName": "Soccer",
+				"facilities": "Soccer field"
+			}
+		],
+		"college_rating": 4.8
+	},
+	{
+		"college_image": "https://i.ibb.co/MGtJvqf/cambridge.jpg",
+		"college_name": "University of Cambridge",
+		"admission_date": "2023-08-25",
+		"admission_process": "Apply online through UCAS, and then undergo the Cambridge Admissions Assessment and interviews.",
+		"events_details": [
+			{
+				"eventName": "Cultural Week",
+				"description": "Showcasing diverse cultures"
+			},
+			{
+				"eventName": "Literature Fest",
+				"description": "Celebration of literature and poetry"
+			},
+			{
+				"eventName": "Conferences",
+				"description": "Intellectual conferences"
+			}
+		],
+		"research_history": "Leading research center in Social Sciences",
+		"sports_details": [
+			{
+				"sportName": "Basketball",
+				"facilities": "Indoor basketball court"
+			},
+			{
+				"sportName": "Athletics",
+				"facilities": "Athletics track"
+			},
+			{
+				"sportName": "Table Tennis",
+				"facilities": "Table tennis room"
+			}
+		],
+		"college_rating": 4.6
+	},
+	{
+		"college_image": "https://i.ibb.co/Zmm6qj8/caltech.jpg",
+		"college_name": "California Institute of Technology",
+		"admission_date": "2023-09-10",
+		"admission_process": "Complete the online application, including standardized test scores, and participate in interviews with faculty members.",
+		"events_details": [
+			{
+				"eventName": "Annual Sports Day",
+				"description": "Intercollegiate sports competitions"
+			},
+			{
+				"eventName": "Dance Competitions",
+				"description": "Showcasing dance talents"
+			},
+			{
+				"eventName": "Symposia",
+				"description": "Discussion on various topics"
+			}
+		],
+		"research_history": "Prominent in Business and Management research",
+		"sports_details": [
+			{
+				"sportName": "Gymnastics",
+				"facilities": "Gymnastics hall"
+			},
+			{
+				"sportName": "Cricket",
+				"facilities": "Cricket practice net"
+			},
+			{
+				"sportName": "Chess",
+				"facilities": "Chess room"
+			}
+		],
+		"college_rating": 4.4
+	},
+	{
+		"college_image": "https://i.ibb.co/Bfp1Myp/mit.jpg",
+		"college_name": "Massachusetts Institute of Technology",
+		"admission_date": "2023-07-30",
+		"admission_process": "Apply through the MIT website or Common Application, and then undergo a comprehensive evaluation based on academic achievements, test scores, essays, and interviews.",
+		"events_details": [
+			{
+				"eventName": "Tech Expo",
+				"description": "Showcasing technological innovations"
+			},
+			{
+				"eventName": "Hackathons",
+				"description": "24-hour coding challenges"
+			},
+			{
+				"eventName": "Innovation Summit",
+				"description": "Discussing future technologies"
+			}
+		],
+		"research_history": "Leading research institution in Computer Science",
+		"sports_details": [
+			{
+				"sportName": "Swimming",
+				"facilities": "Indoor swimming pool"
+			},
+			{
+				"sportName": "Football",
+				"facilities": "Football ground"
+			},
+			{
+				"sportName": "Tennis",
+				"facilities": "Tennis courts"
+			}
+		],
+		"college_rating": 4.7
+	}
+]

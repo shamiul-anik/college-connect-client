@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Jeremy Watts",
+    "image": "https://i.ibb.co/xXmCpn7/image2.jpg",
+    "details": "Harvard University is an amazing place with excellent faculty and state-of-the-art facilities. The events and workshops offered here are enriching and help in overall personality development. I highly recommend this university!",
+    "rating": 5
+  },
+  {
+    "name": "Michael Grayson",
+    "image": "https://i.ibb.co/t3M2D4H/image8.jpg",
+    "details": "I had a wonderful experience at the University of Oxford. The cultural fest and guest lectures were a highlight. The research opportunities are outstanding, and the sports facilities are top-notch. Definitely a 5-star university!",
+    "rating": 5
+  },
+  {
+    "name": "Robert Johnson",
+    "image": "https://i.ibb.co/QcjmKLz/image10.jpg",
+    "details": "Stanford University provides a great learning environment with its tech fest and robotics competitions. The counseling and support from the faculty are commendable. Overall, it's a fantastic institution with a 5-star rating!",
+    "rating": 5
+  }
+]
