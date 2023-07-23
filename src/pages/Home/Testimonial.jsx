@@ -33,7 +33,7 @@ const Testimonial = () => {
     <div>
       <section className="max-w-7xl mx-auto mt-12 lg:mt-32 p-4 md:px-0" data-aos="flip-right">
 
-        <SectionTitle heading="Testimonial" subHeading="Check out what our students says about us."></SectionTitle>
+        <SectionTitle heading="Testimonials" subHeading="Check out what our students says about us."></SectionTitle>
 
         <Swiper
           spaceBetween={30}
@@ -51,6 +51,7 @@ const Testimonial = () => {
               <blockquote className="mx-8 flex justify-center items-center flex-col gap-4 mt-6">
                 <BiSolidQuoteLeft className="text-6xl text-slate-500" />
                 <p>{review.details}</p>
+                <img className="h-40 w-40 rounded-full ring-2 ring-offset-2 ring-teal-500 object-cover" src={review.image} alt={review.name} />
                 <p className="text-2xl font-bold text-teal-700">{review.name}</p>
               </blockquote>
             </SwiperSlide>
