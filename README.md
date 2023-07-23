@@ -1,3 +1,5 @@
+# <h1 align="middle"> ![College Connect](./images/logo.png) College Connect</h1>
+
 <h3>Welcome to College Connect!</h3>
 
 "College Connect" is a user-friendly web application designed to bridge the gap between aspiring students and their dream colleges. With a seamless MERN stack development, the platform offers an intuitive interface that empowers visitors to explore, book, and connect with various college services and facilities.
