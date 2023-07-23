@@ -36,29 +36,32 @@ https://college-connect-server-production.up.railway.app/
 
 
 ## Features of this Project
-1. Full project is made with responsive design for smartphone, tablet and PC.
-2. A Navbar with navigation options, profile picture when logged in and a login button. Active styles for different routes on the Navbar also added.
-<!-- 3. Homepage with a Carousel, Popular Instructors, Popular Classes, Statistics, Testimonials, Upcoming Course and Newsletter sections. Here Statistics, Testimonials, Upcoming Course and Newsletter are extra sections added as per the requirements. -->
-4. Lazy image loading feature implemented for better performance and user experience.
-<!-- 5. Clicking on the Select Class button will add booking class information in the database. -->
-6. An Error handling (404) page with error message and animated text and image added for error handling.
-7. Dashboard added for Admin.
-8. Dynamic title on the tab added which changes with the menu using custom hook.
-9. Used Railway for server side deployment. (As vercel has some issue regarding data loading)
-10. When reloaded page not found error handling for different routes and live server.
-11. Toast alerts for various user activities.
-<!-- 12. User's Name and Photo URL update functionality added when registering with email and password. -->
-13. React Icons added.
-14. Show/Hide password feature added in Login and Registration page.
-15. Accept terms and conditions to continue with the registration process functionality added.
-16. User profile added with update functionality.
-17. Social login functionality added using Google Firebase.
-18. React lazy load added for better user experience and optimization.
-19. Contact and About page added as extra features.
-20. AOS animation added on different sections of Home page.
-21. React Awesome Reveal animation added on Banner of Home, Instructors, Classes, About, Contact and Dashboard pages.
-22. React Icons added.
-23. React Helmet Async used for SEO optimization.
+<ol>
+  <li>Full project is made with responsive design for smartphone, tablet and PC.</li>
+  <li>A Navbar with navigation options, profile picture when logged in and a login button. Active styles for different routes on the Navbar also added.</li>
+  <!-- <li>- 3. Homepage with a Carousel, Popular Instructors, Popular Classes, Statistics, Testimonials, Upcoming Course and Newsletter sections. Here Statistics, Testimonials, Upcoming Course and Newsletter are extra sections added as per the requirements. --> -->
+  <li>Lazy image loading feature implemented for better performance and user experience.</li>
+  <!-- <li>- 5. Clicking on the Select Class button will add booking class information in the database. --> -->
+  <li>An Error handling (404) page with error message and animated text and image added for error handling.</li>
+  <li>Dashboard added for Admin.</li>
+  <li>Dynamic title on the tab added which changes with the menu using custom hook.</li>
+  <li>Used Railway for server side deployment. (As vercel has some issue regarding data loading)</li>
+  <li>When reloaded page not found error handling for different routes and live server.</li>
+  <li>Toast alerts for various user activities.</li>
+  <li>Swiperjs for showing reviews with custom design.</li>
+  <li>User's Name and Photo URL update functionality added when registering with email and password. --></li>
+  <li>React Icons added.</li>
+  <li>Show/Hide password feature added in Login and Registration page.</li>
+  <li>Accept terms and conditions to continue with the registration process functionality added.</li>
+  <li>User profile added with update functionality.</li>
+  <li>Social login functionality added using Google Firebase.</li>
+  <li>React lazy load added for better user experience and optimization.</li>
+  <li>Contact and About page added as extra features.</li>
+  <li>AOS animation added on different sections of Home page.</li>
+  <li>React Awesome Reveal animation added on Banner of Home, Instructors, Classes, About, Contact and Dashboard pages.</li>
+  <li>React Icons added.</li>
+  <li>React Helmet Async used for SEO optimization.</li>
+</ol>
 
 ## Packages/Services/Font Used:
 <table>
@@ -170,11 +173,11 @@ https://college-connect-server-production.up.railway.app/
       <td>React Helmet Async</td>
       <td>https://www.npmjs.com/package/react-helmet-async</td>
     </tr>
-    <!-- <tr>
-      <td align="center">12</td>
+    <tr>
+      <td align="center">21</td>
       <td>Swiper</td>
       <td>https://swiperjs.com/react</td>
-    </tr> -->
+    </tr>
     <!-- 
       <tr>
         <td align="center">12</td>
