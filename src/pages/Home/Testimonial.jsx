@@ -1,14 +1,65 @@
 import { Rating } from "@smastrom/react-rating";
 import SectionTitle from "../../components/SectionTitle";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { BiSolidQuoteLeft } from 'react-icons/bi';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import useAuth from "../../hooks/useAuth";
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './Testomonial.css';
+
 
 const Testimonial = () => {
+
+  const { loading, setLoading } = useAuth();
+
+  const { data: allReviews = []} = useQuery({
+    queryKey: ["allReviews"],
+    enabled: !loading,
+    queryFn: async () => {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/reviews`);
+      setLoading(false);
+      // console.log(res?.data);
+      return res?.data;
+    },
+  });
+
   return (
     <div>
       <section className="max-w-7xl mx-auto mt-12 lg:mt-32 p-4 md:px-0" data-aos="flip-right">
 
-        <SectionTitle heading="Our Happy Students" subHeading="Check out what our students says about us."></SectionTitle>
+        <SectionTitle heading="Testimonial" subHeading="Check out what our students says about us."></SectionTitle>
 
-        <div className="mt-4 md:mt-8 grid mb-8 border-2 border-slate-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop={true}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {
+            allReviews.map((review) => <SwiperSlide key={review._id}>
+              <Rating style={{ maxWidth: 180 }} value={review.rating} readOnly />
+              <blockquote className="mx-8 flex justify-center items-center flex-col gap-4 mt-6">
+                <BiSolidQuoteLeft className="text-6xl text-slate-500" />
+                <p>{review.details}</p>
+                <p className="text-2xl font-bold text-teal-700">{review.name}</p>
+              </blockquote>
+            </SwiperSlide>
+            )
+          }
+          
+          
+        </Swiper>
+        {/* <div className="mt-4 md:mt-8 grid mb-8 border-2 border-slate-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
           <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-bl-lg md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white uppercase">Awesome!</h3>
@@ -37,7 +88,7 @@ const Testimonial = () => {
                 </div>
             </figcaption>
           </figure>
-        </div>
+        </div> */}
       </section>
     </div>
   );
