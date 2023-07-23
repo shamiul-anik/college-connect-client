@@ -25,7 +25,7 @@ const Home = () => {
       <HomeBanner></HomeBanner>
 
       {/* Home Carousel */}
-      {/* <HomeCarousel></HomeCarousel> */}
+      <HomeCarousel></HomeCarousel>
 
       {/* Popular Classes */}
       {/* <PopularClasses></PopularClasses> */}
@@ -37,7 +37,7 @@ const Home = () => {
       {/* <Statistics></Statistics> */}
 
       {/* Testimonial */}
-      {/* <Testimonial></Testimonial> */}
+      <Testimonial></Testimonial>
 
       {/* Newsletter */}
       <Newsletter></Newsletter>
