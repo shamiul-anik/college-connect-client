@@ -1,4 +1,4 @@
-# <h1 align="middle"> ![College Connect](public/images/logo.png) College Connect</h1>
+# <h1 align="middle"> ![College Connect](public/images/logo-small.png) College Connect</h1>
 
 <h3>Welcome to College Connect!</h3>
 
