@@ -5,7 +5,7 @@ import HomeBanner from './HomeBanner';
 import SearchColleges from "./SearchColleges/SearchColleges";
 import FeaturedColleges from "./FeaturedColleges/FeaturedColleges";
 import HomeCarousel from './HomeCarousel/HomeCarousel';
-// import Statistics from "./Statistics";
+import RecommendedResearchPapers from "./RecommendedResearchPapers";
 import Testimonial from "./Testimonial/Testimonial";
 import Newsletter from "./Newsletter";
 
@@ -33,8 +33,8 @@ const Home = () => {
       {/* Home Carousel */}
       <HomeCarousel></HomeCarousel>
       
-      {/* Statistics */}
-      {/* <Statistics></Statistics> */}
+      {/* Recommended Research Papers */}
+      <RecommendedResearchPapers></RecommendedResearchPapers>
 
       {/* Testimonial */}
       <Testimonial></Testimonial>
