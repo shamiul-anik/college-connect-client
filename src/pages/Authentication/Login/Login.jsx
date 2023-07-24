@@ -3,16 +3,14 @@ import { FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { toast } from 'react-toastify';
-import { useTitle } from '../../../hooks/useTitle';
 import { useForm } from 'react-hook-form';
 import Loader from '../../shared/Loader/Loader';
 import { saveUser } from '../../../api/auth';
+import ReactHelmet from '../../../components/reactHelmet';
 
 const Login = () => {
 
-	useTitle("Login");
-
-	const { loading, setLoading, logIn, signInWithGoogle } = useContext(AuthContext);
+	const { loading, setLoading, logIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
 	const { register, handleSubmit, formState: { errors } } = useForm();
 
 	const [error, setError] = useState("");
@@ -78,6 +76,9 @@ const Login = () => {
 
 	return (
 		<section className="max-w-lg mx-auto mt-4 lg:mt-20 p-4">
+
+			<ReactHelmet documentTitle="College Connect | Login" metaDescription="Login"></ReactHelmet>
+
 			<div className="flex card card-compact w-full bg-base-100 shadow-xl border-2 border-teal-400">
 				
 				<div className="flex-1 p-6 md:p-8 pt-5 pb-1 md:pb-2">

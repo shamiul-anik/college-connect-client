@@ -2,12 +2,10 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useTitle } from '../../../hooks/useTitle';
 import Swal from 'sweetalert2';
+import ReactHelmet from '../../../components/reactHelmet';
 
 const PasswordReset = () => {
-
-  useTitle("Password Reset");
 
   const navigate = useNavigate();
 
@@ -61,6 +59,9 @@ const PasswordReset = () => {
 
   return (
     <section className="max-w-lg mx-auto mt-4 lg:mt-20 p-4">
+
+      <ReactHelmet documentTitle="College Connect | Password Reset" metaDescription="Password Reset"></ReactHelmet>
+
       <div className="flex card card-compact w-full bg-base-100 shadow-2xl">
 
         <div className="flex-1 p-6 md:p-8 pt-5 pb-1 md:pb-2">

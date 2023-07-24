@@ -49,9 +49,9 @@ const Sidebar = () => {
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
             <Link to="/" className="flex gap-3 md:gap-3 items-center btn px-0 btn-ghost normal-case font-extrabold text-2xl lg:text-3xl text-teal-600 hover:bg-inherit">
-              <img className="h-10 w-10 rounded-full ring-2 ring-offset-2 ring-teal-700" src={Logo} alt="Logo" />
+              <img className="h-10 w-10" src={Logo} alt="Logo" />
               <span className='flex items-center text-xl md:text-3xl'>
-                <Fade duration={300} triggerOnce={true} cascade>Language School</Fade>
+                <Fade duration={300} triggerOnce={true} cascade>College Connect</Fade>
               </span>
             </Link>
           </div>
@@ -74,9 +74,9 @@ const Sidebar = () => {
           <div>
             <div className='w-full hidden md:flex py-4 justify-center items-center bg-teal-100 mx-auto'>
               <Link to="/" className="flex gap-3 md:gap-3 items-center btn px-0 btn-ghost normal-case font-extrabold text-2xl lg:text-3xl text-teal-600 hover:bg-inherit">
-                <img className="h-10 w-10 rounded-full ring-2 ring-offset-2 ring-teal-700" src={Logo} alt="Logo" />
+                <img className="h-10 w-10" src={Logo} alt="Logo" />
                 <span className='flex items-center text-lg md:text-xl'>
-                  <Fade duration={300} triggerOnce={true} cascade>Language School</Fade>
+                  <Fade duration={300} triggerOnce={true} cascade>College Connect</Fade>
                 </span>
               </Link>
             </div>
@@ -121,90 +121,19 @@ const Sidebar = () => {
           <div className='flex flex-col justify-start flex-1'>
             <nav>
               <>
-                {/* Dashboard Menu Links */}
-                {/* <NavLink
-                  to='/dashboard'
-                  className={({ isActive }) =>
-                    `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                  }
-                >
-                  <FaBookOpen className='w-5 h-5' />
-                  <span className='mx-4 font-medium'>Dashboard</span>
-                </NavLink> */}
-                
-                {/* Student */}
-                { 
-                  userRole === "student" && 
-                    <>
-                      <NavLink
-                        to='/dashboard/my-selected-classes'
-                        className={({ isActive }) =>
-                          `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                        }
-                      >
-                        <FaCheckDouble className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>My Selected Classes</span>
-                      </NavLink>
-                      <NavLink
-                        to='/dashboard/my-enrolled-classes'
-                        className={({ isActive }) =>
-                          `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                        }
-                      >
-                        <FaMoneyCheck className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>My Enrolled Classes</span>
-                      </NavLink>
-                      <NavLink
-                        to='/dashboard/my-payment-history'
-                        className={({ isActive }) =>
-                          `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                        }
-                      >
-                        <FaWallet className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>My Payment History</span>
-                      </NavLink>
-                    </>
-                }
-                
-                
-                {/* Instructor */}
-                {
-                  userRole === "instructor" &&
-                    <>
-                      <NavLink
-                        to='/dashboard/add-a-class'
-                        className={({ isActive }) =>
-                          `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                        }
-                      >
-                        <FaBookMedical className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>Add a Class</span>
-                      </NavLink>
-                      <NavLink
-                        to='/dashboard/my-classes'
-                        className={({ isActive }) =>
-                          `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
-                        }
-                      >
-                        <FaBook className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>My Classes</span>
-                      </NavLink>
-                    </>
-                }
-                
                 
                 {/* Admin */}
                 {
                   userRole === "admin" &&
                     <>
                       <NavLink
-                        to='/dashboard/manage-classes'
+                        to='/dashboard/manage-colleges'
                         className={({ isActive }) =>
                           `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
                         }
                       >
                         <BsBookmarkCheckFill className='w-5 h-5' />
-                        <span className='mx-4 font-medium'>Manage Classes</span>
+                        <span className='mx-4 font-medium'>Manage Colleges</span>
                       </NavLink>
                       <NavLink
                         to='/dashboard/manage-users'
@@ -235,22 +164,22 @@ const Sidebar = () => {
             <span className='mx-4 font-medium'>Home</span>
           </NavLink>
           <NavLink
-            to='/instructors'
+            to='/colleges'
             className={({ isActive }) =>
               `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
             }
           >
             <FaChalkboardTeacher className='w-5 h-5' />
-            <span className='mx-4 font-medium'>Instructors</span>
+            <span className='mx-4 font-medium'>Colleges</span>
           </NavLink>
           <NavLink
-            to='/classes'
+            to='/admission'
             className={({ isActive }) =>
               `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
             }
           >
             <GiTeacher className='w-5 h-5' />
-            <span className='mx-4 font-medium'>Classes</span>
+            <span className='mx-4 font-medium'>Admission</span>
           </NavLink>
           <NavLink
             to='/contact'
@@ -261,7 +190,7 @@ const Sidebar = () => {
             <LuContact className='w-5 h-5' />
             <span className='mx-4 font-medium'>Contact</span>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to='/about'
             className={({ isActive }) =>
               `flex items-center px-4 py-2 transition-colors duration-300 transform hover:bg-teal-200 hover:text-teal-700 ${isActive ? 'bg-teal-200 text-teal-700' : 'text-teal-600'}`
@@ -269,7 +198,7 @@ const Sidebar = () => {
           >
             <BiDetail className='w-5 h-5' />
             <span className='mx-4 font-medium'>About</span>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to='/profile'
             className={({ isActive }) =>

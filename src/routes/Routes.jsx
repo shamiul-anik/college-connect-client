@@ -14,15 +14,15 @@ const ViewCollege = lazy(() => import("../pages/ViewCollege/ViewCollege"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 // const About = lazy(() => import("../pages/About/About"));
 
-// const Login = lazy(() => import("../pages/Authentication/Login/Login"));
-// const Registration = lazy(() => import("../pages/Authentication/Registration/Registration"));
-// const PasswordReset = lazy(() => import("../pages/Authentication/PasswordReset/PasswordReset"));
-// const Profile = lazy(() => import("../pages/Authentication/Profile/Profile"));
+const Login = lazy(() => import("../pages/Authentication/Login/Login"));
+const Registration = lazy(() => import("../pages/Authentication/Registration/Registration"));
+const PasswordReset = lazy(() => import("../pages/Authentication/PasswordReset/PasswordReset"));
+const Profile = lazy(() => import("../pages/Authentication/Profile/Profile"));
 
 const PrivateRoute = lazy(() => import("./PrivateRoute"));
 // const AdminRoute = lazy(() => import("./AdminRoute"));
 
-// const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
+const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
 // const ManageUsers = lazy(() => import("../pages/Dashboard/Admin/ManageUsers/ManageUsers"));
 // const ManageClasses = lazy(() => import("../pages/Dashboard/Admin/ManageClasses/ManageClasses"));
 // const AddClass = lazy(() => import("../pages/Dashboard/Instructor/AddClass/AddClass"));
@@ -51,22 +51,22 @@ export const router = createBrowserRouter([
 				element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><ViewCollege></ViewCollege></PrivateRoute></Suspense>,
 				loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/college/${params.id}`)
 			},
-			// {
-			// 	path: 'login',
-			// 	element: <Suspense fallback={<Loader></Loader>}><Login></Login></Suspense>
-			// },
-			// {
-			// 	path: 'registration',
-			// 	element: <Suspense fallback={<Loader></Loader>}><Registration></Registration></Suspense>
-			// },
-			// {
-			// 	path: 'password-reset',
-			// 	element: <Suspense fallback={<Loader></Loader>}><PasswordReset></PasswordReset></Suspense>
-			// },
-			// {
-			// 	path: 'profile',
-			// 	element: <Suspense fallback={<Loader></Loader>}><Profile></Profile></Suspense>
-			// },
+			{
+				path: 'login',
+				element: <Suspense fallback={<Loader></Loader>}><Login></Login></Suspense>
+			},
+			{
+				path: 'registration',
+				element: <Suspense fallback={<Loader></Loader>}><Registration></Registration></Suspense>
+			},
+			{
+				path: 'password-reset',
+				element: <Suspense fallback={<Loader></Loader>}><PasswordReset></PasswordReset></Suspense>
+			},
+			{
+				path: 'profile',
+				element: <Suspense fallback={<Loader></Loader>}><Profile></Profile></Suspense>
+			},
 			{
 				path: 'contact',
 				element: <Suspense fallback={<Loader></Loader>}><Contact></Contact></Suspense>
@@ -77,43 +77,31 @@ export const router = createBrowserRouter([
 			// }
 		]
 	},
-	// {
-	// 	path: '/dashboard',
-	// 	element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-	// 	errorElement: <ErrorPage></ErrorPage>,
-	// 	children: [
-	// 		{
-	// 			path: '/dashboard',
-	// 			element: <Suspense fallback={<Loader></Loader>}><Dashboard></Dashboard></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/manage-users',
-	// 			element: <Suspense fallback={<Loader></Loader>}><AdminRoute><ManageUsers></ManageUsers></AdminRoute></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/manage-classes',
-	// 			element: <Suspense fallback={<Loader></Loader>}><AdminRoute><ManageClasses></ManageClasses></AdminRoute></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/add-a-class',
-	// 			element: <Suspense fallback={<Loader></Loader>}><InstructorRoute><AddClass></AddClass></InstructorRoute></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/my-classes',
-	// 			element: <Suspense fallback={<Loader></Loader>}><InstructorRoute><MyClasses></MyClasses></InstructorRoute></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/my-selected-classes',
-	// 			element: <Suspense fallback={<Loader></Loader>}><MySelectedClasses></MySelectedClasses></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/my-enrolled-classes',
-	// 			element: <Suspense fallback={<Loader></Loader>}><MyEnrolledClasses></MyEnrolledClasses></Suspense>,
-	// 		},
-	// 		{
-	// 			path: '/dashboard/my-payment-history',
-	// 			element: <Suspense fallback={<Loader></Loader>}><MyPaymentHistory></MyPaymentHistory></Suspense>,
-	// 		}
-	// 	]
-	// }
+	{
+		path: '/dashboard',
+		element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+		errorElement: <ErrorPage></ErrorPage>,
+		children: [
+			{
+				path: '/dashboard',
+				element: <Suspense fallback={<Loader></Loader>}><Dashboard></Dashboard></Suspense>,
+			},
+			// {
+			// 	path: '/dashboard/manage-users',
+			// 	element: <Suspense fallback={<Loader></Loader>}><AdminRoute><ManageUsers></ManageUsers></AdminRoute></Suspense>,
+			// },
+			// {
+			// 	path: '/dashboard/manage-colleges',
+			// 	element: <Suspense fallback={<Loader></Loader>}><AdminRoute><ManageClasses></ManageClasses></AdminRoute></Suspense>,
+			// },
+			// {
+			// 	path: '/dashboard/add-a-college',
+			// 	element: <Suspense fallback={<Loader></Loader>}><InstructorRoute><AddClass></AddClass></InstructorRoute></Suspense>,
+			// },
+			// {
+			// 	path: '/dashboard/all-classes',
+			// 	element: <Suspense fallback={<Loader></Loader>}><InstructorRoute><MyClasses></MyClasses></InstructorRoute></Suspense>,
+			// },
+		]
+	}
 ]);

@@ -5,16 +5,14 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
-import { useTitle } from '../../../hooks/useTitle';
 import { saveUser } from '../../../api/auth';
 import Terms from './Terms';
+import ReactHelmet from '../../../components/reactHelmet';
 
 const Registration = () => {
 
-	useTitle("Registration");
-
 	const navigate = useNavigate();
-	const { createUser, logOut, signInWithGoogle } = useContext(AuthContext);
+	const { createUser, logOut, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
 	const { register, getValues, handleSubmit, formState: { errors } } = useForm();
 
 	const [error, setError] = useState("");
@@ -119,6 +117,9 @@ const Registration = () => {
 
 	return (
 		<section className="max-w-4xl mx-auto mt-4 lg:mt-20 p-4">
+
+			<ReactHelmet documentTitle="College Connect | Registration" metaDescription="Registration"></ReactHelmet>
+
 			<div className="flex card card-compact w-full bg-base-100 shadow-xl border-2 border-teal-400">
 
 				<div className="flex-1 p-6 md:p-8 pt-5 pb-1 md:pb-2">
@@ -212,7 +213,7 @@ const Registration = () => {
 
 						<div className="form-control mt-4">
 							<label className="label !justify-start text-md gap-2 cursor-pointer">
-								<input onChange={handleAcceptTerms} type="checkbox" className="checkbox checkbox-accent checkbox-sm rounded-md border-gray-400 shadow-sm" id="terms" />
+								<input onChange={handleAcceptTerms} type="checkbox" className="checkbox checkbox-accent checkbox-sm rounded-md border-gray-400 shadow-sm focus:!ring-teal-500" id="terms" />
 								<span htmlFor="terms" className="label-text ">Accept</span>
 								{/* To Open Modal */}
 								<label htmlFor="terms-modal" className=" link link-primary font-semibold transition-all hover:duration-200 text-blue-600 hover:text-blue-700"> Terms & Conditions.</label>

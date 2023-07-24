@@ -2,13 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import { updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { useTitle } from '../../../hooks/useTitle';
 import UserImage from '../../../assets/images/user.png'
 import { toast } from 'react-toastify';
+import ReactHelmet from '../../../components/reactHelmet';
 
 const Profile = () => {
-
-  useTitle("Profile");
 
   const navigate = useNavigate();
 
@@ -50,6 +48,9 @@ const Profile = () => {
 
   return (
     <section className="max-w-lg mx-auto mt-4 lg:mt-20 p-4">
+
+      <ReactHelmet documentTitle="College Connect | Profile" metaDescription="Profile"></ReactHelmet>
+
       <div className="flex card card-compact w-full bg-base-100 shadow-xl border-2 border-teal-400">
 
         <div className="flex-1 p-6 md:p-8 pt-5 pb-1 md:pb-2">
