@@ -3,6 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import CommonBanner from '../../components/CommonBanner';
 import ReactHelmet from '../../components/reactHelmet';
+import { Rating } from "@smastrom/react-rating";
 
 
 const ViewToy = () => {
@@ -111,7 +112,7 @@ const ViewToy = () => {
                 <label className="label pl-0" htmlFor="rating">
                   <span className="label-text text-lg md:text-xl font-semibold">Rating</span>
                 </label>
-                <p className='text-lg text-slate-500 mb-2'>{college_rating}</p>
+                <p className='flex items-center gap-2 text-lg text-slate-500 mb-2'><Rating style={{ maxWidth: 110 }} value={college_rating} readOnly /> {college_rating}</p>
               </div>
               <div className="form-control">
                 <label className="label pl-0" htmlFor="featured">
@@ -121,10 +122,7 @@ const ViewToy = () => {
               </div>
             </div>
 
-            
-
           </div>
-
         </div>
       </section>
     </div>
