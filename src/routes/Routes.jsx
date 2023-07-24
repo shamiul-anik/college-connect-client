@@ -8,7 +8,7 @@ const DashboardLayout = lazy(() => import("../layouts/DashboardLayout"));
 const ErrorPage = lazy(() => import("../pages/shared/ErrorPage/ErrorPage"));
 
 const Home = lazy(() => import("../pages/Home/Home"));
-// const Instructors = lazy(() => import("../pages/Instructors/Instructors"));
+const Colleges = lazy(() => import("../pages/Colleges/Colleges"));
 // const Classes = lazy(() => import("../pages/Classes/Classes"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 // const About = lazy(() => import("../pages/About/About"));
@@ -40,10 +40,10 @@ export const router = createBrowserRouter([
 				path: '/',
 				element: <Suspense fallback={<Loader></Loader>}><Home></Home></Suspense>,
 			},
-			// {
-			// 	path: '/instructors',
-			// 	element: <Suspense fallback={<Loader></Loader>}><Instructors></Instructors></Suspense>,
-			// },
+			{
+				path: '/colleges',
+				element: <Suspense fallback={<Loader></Loader>}><Colleges></Colleges></Suspense>,
+			},
 			// {
 			// 	path: '/classes',
 			// 	element: <Suspense fallback={<Loader></Loader>}><Classes></Classes></Suspense>,

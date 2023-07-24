@@ -10,13 +10,14 @@ const SearchColleges = () => {
   const { loading, setLoading } = useAuth();
 
   const [search, setSearch] = useState("");
+  const [limit, setLimit] = useState(3);
   const searchRef = useRef(null);
 
   const { data: searchColleges = [] } = useQuery({
-    queryKey: ["searchColleges", search],
+    queryKey: ["searchColleges", search, limit],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/colleges?search=${search}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/colleges?search=${search}&limit=${limit}`);
       setLoading(false);
       console.log(res?.data);
       return res?.data;
@@ -30,7 +31,7 @@ const SearchColleges = () => {
 
       {/* Search */}
       <div className="flex gap-2 flex-col md:flex-row w-full mx-auto md:w-3/4">
-        <label htmlFor="search" className="sr-only">Search by Toy Name</label>
+        <label htmlFor="search" className="sr-only">Search by College Name</label>
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

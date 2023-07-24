@@ -18,6 +18,7 @@
 				"description": "Skill development sessions"
 			}
 		],
+		"research_number": 8,
 		"research_history": "Pioneering research in Science and Technology",
 		"sports_details": [
 			{
@@ -54,6 +55,7 @@
 				"description": "Talks by renowned speakers"
 			}
 		],
+		"research_number": 15,
 		"research_history": "Strong emphasis on Arts and Humanities research",
 		"sports_details": [
 			{
@@ -90,6 +92,7 @@
 				"description": "Knowledge-sharing sessions"
 			}
 		],
+		"research_number": 18,
 		"research_history": "Renowned for cutting-edge Engineering research",
 		"sports_details": [
 			{
@@ -126,6 +129,7 @@
 				"description": "Intellectual conferences"
 			}
 		],
+		"research_number": 25,
 		"research_history": "Leading research center in Social Sciences",
 		"sports_details": [
 			{
@@ -162,6 +166,7 @@
 				"description": "Discussion on various topics"
 			}
 		],
+		"research_number": 30,
 		"research_history": "Prominent in Business and Management research",
 		"sports_details": [
 			{
@@ -198,6 +203,7 @@
 				"description": "Discussing future technologies"
 			}
 		],
+		"research_number": 12,
 		"research_history": "Leading research institution in Computer Science",
 		"sports_details": [
 			{
