@@ -10,7 +10,8 @@ const ErrorPage = lazy(() => import("../pages/shared/ErrorPage/ErrorPage"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const Colleges = lazy(() => import("../pages/Colleges/Colleges"));
 const ViewCollege = lazy(() => import("../pages/ViewCollege/ViewCollege"));
-// const Classes = lazy(() => import("../pages/Classes/Classes"));
+const Admission = lazy(() => import("../pages/Admission/Admission"));
+const AdmitToCollege = lazy(() => import("../pages/Admission/AdmitToCollege"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 // const About = lazy(() => import("../pages/About/About"));
 
@@ -23,13 +24,7 @@ const PrivateRoute = lazy(() => import("./PrivateRoute"));
 // const AdminRoute = lazy(() => import("./AdminRoute"));
 
 const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
-// const ManageUsers = lazy(() => import("../pages/Dashboard/Admin/ManageUsers/ManageUsers"));
-// const ManageClasses = lazy(() => import("../pages/Dashboard/Admin/ManageClasses/ManageClasses"));
-// const AddClass = lazy(() => import("../pages/Dashboard/Instructor/AddClass/AddClass"));
-// const MyClasses = lazy(() => import("../pages/Dashboard/Instructor/MyClasses/MyClasses"));
-// const MySelectedClasses = lazy(() => import("../pages/Dashboard/Student/MySelectedClasses/MySelectedClasses"));
-// const MyEnrolledClasses = lazy(() => import("../pages/Dashboard/Student/MyEnrolledClasses/MyEnrolledClasses"));
-// const MyPaymentHistory = lazy(() => import("../pages/Dashboard/Student/MyPaymentHistory/MyPaymentHistory"));
+
 
 export const router = createBrowserRouter([
 	{
@@ -49,6 +44,15 @@ export const router = createBrowserRouter([
 				path: "/college/:id",
 				// element: <Suspense fallback={<Loader></Loader>}><ViewCollege></ViewCollege></Suspense>,
 				element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><ViewCollege></ViewCollege></PrivateRoute></Suspense>,
+				loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/college/${params.id}`)
+			},
+			{
+				path: '/admission',
+				element: <Suspense fallback={<Loader></Loader>}><Admission></Admission></Suspense>,
+			},
+			{
+				path: "/admit/:id",
+				element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><AdmitToCollege></AdmitToCollege></PrivateRoute></Suspense>,
 				loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/college/${params.id}`)
 			},
 			{
