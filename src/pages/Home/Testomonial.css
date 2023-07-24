@@ -20,9 +20,17 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #036C78;
+  color: #036c78;
 }
 
 .swiper-pagination-bullet-active {
-  background: #036C78;
+  background: #036c78;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+  .swiper {
+    min-height: 500px;
+    padding-inline: 30px;
+  }
 }

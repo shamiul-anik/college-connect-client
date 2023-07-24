@@ -7,7 +7,7 @@ import Statistics from "./Statistics";
 import Newsletter from "./Newsletter";
 import Testimonial from "./Testimonial";
 import PopularInstructors from "./PopularInstructors/PopularInstructors";
-import PopularClasses from "./PopularClasses/PopularClasses";
+import FeaturedColleges from "./FeaturedColleges/FeaturedColleges";
 
 
 const Home = () => {
@@ -24,11 +24,12 @@ const Home = () => {
       {/* Home Page Banner */}
       <HomeBanner></HomeBanner>
 
+      {/* Featured Colleges */}
+      <FeaturedColleges></FeaturedColleges>
+
       {/* Home Carousel */}
       <HomeCarousel></HomeCarousel>
-
-      {/* Popular Classes */}
-      {/* <PopularClasses></PopularClasses> */}
+      
       
       {/* Popular Instructors */}
       {/* <PopularInstructors></PopularInstructors> */}

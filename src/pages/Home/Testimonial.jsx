@@ -46,13 +46,13 @@ const Testimonial = () => {
           className="mySwiper"
         >
           {
-            allReviews.map((review) => <SwiperSlide key={review._id}>
+            allReviews?.map((review) => <SwiperSlide key={review._id}>
               <Rating style={{ maxWidth: 180 }} value={review.rating} readOnly />
-              <blockquote className="mx-8 flex justify-center items-center flex-col gap-4 mt-6">
+              <blockquote className="text-base md:text-lg mx-8 flex justify-center items-center flex-col gap-4 mt-6">
                 <BiSolidQuoteLeft className="text-6xl text-slate-500" />
                 <p>{review.details}</p>
-                <img className="h-40 w-40 rounded-full ring-2 ring-offset-2 ring-teal-500 object-cover" src={review.image} alt={review.name} />
-                <p className="text-2xl font-bold text-teal-700">{review.name}</p>
+                <img className="h-20 md:h-40 w-20 md:w-40 rounded-full ring-2 ring-offset-2 ring-teal-500 object-cover" src={review.image} alt={review.name} />
+                <p className="text-xl md:text-2xl font-bold text-teal-700">{review.name}</p>
               </blockquote>
             </SwiperSlide>
             )

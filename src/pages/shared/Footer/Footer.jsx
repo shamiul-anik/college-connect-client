@@ -35,11 +35,11 @@ const Footer = () => {
           <Link className="link link-hover">Careers</Link>
         </div>
         <div className='col-span-1'>
-          <span className="footer-title text-lg">Programmes</span>
-          <Link className="link link-hover">Long-term Programmes</Link>
-          <Link className="link link-hover">Intensive Programmes</Link>
-          <Link className="link link-hover">Specialized Programme</Link>
-          <Link className="link link-hover">Language Trainings</Link>
+          <span className="footer-title text-lg">Events</span>
+          <Link className="link link-hover">Cultural Fest</Link>
+          <Link className="link link-hover">Tech Fest</Link>
+          <Link className="link link-hover">Seminars</Link>
+          <Link className="link link-hover">Literature Fest</Link>
         </div>
         <div className='col-span-2'>
           <span className="footer-title text-lg">CONTACT</span>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-sm lg:text-base mx-auto mt-8 py-6 border-t border-t-2 border-teal-600 flex flex-col gap-2 justify-center items-center">
-        <p className='text-center'>Copyright © 2023 College Connect. All Rights Reserved.</p>
+        <p className='text-center px-16'>Copyright © 2023 College Connect. All Rights Reserved.</p>
       </div>
     </footer>
   );
