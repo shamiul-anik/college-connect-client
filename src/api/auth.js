@@ -15,6 +15,22 @@ export const saveUser = (user) => {
   .then((data) => console.log("Data of Saved User", data));
 }
 
+// Update User Information to Database
+export const updateUser = (user) => {
+  const currentUser = {
+    name: user.name,
+    email: user.email,
+    university: user.university,
+    address: user.address,
+    photo_url: user.photoURL,
+  };
+  // console.log("User Data from User Parameter", user);
+  console.log("User from Updated User", currentUser);
+
+  axios.put(`${import.meta.env.VITE_API_URL}/update-user/${user?.email}`, currentUser)
+  .then((data) => console.log("Data of Updated User", data));
+}
+
 // Using Fetch
 // export const saveUser = (user) => {
 //   const currentUser = {

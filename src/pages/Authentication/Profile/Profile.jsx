@@ -5,12 +5,15 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import UserImage from '../../../assets/images/user.png'
 import { toast } from 'react-toastify';
 import ReactHelmet from '../../../components/reactHelmet';
+import { updateUser } from '../../../api/auth';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 const Profile = () => {
 
   const navigate = useNavigate();
 
-  const { user, userRole, setLoading } = useContext(AuthContext);
+  const { user, loading, userRole, setLoading } = useContext(AuthContext);
 
   const currentUserName = user?.displayName;
   const currentUserPhotoURL = user?.photoURL;
@@ -19,12 +22,25 @@ const Profile = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const { data: userData = [], refetch } = useQuery({
+    queryKey: ["userData", user?.email],
+    enabled: !loading,
+    queryFn: async () => {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/user/${user?.email}`);
+      setLoading(false);
+      // console.log("User Data: ", res?.data);
+      return res?.data;
+    },
+  });
+
   const handleProfileUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const name = form.name.value; 
+    const university = form.university.value; 
+    const address = form.address.value; 
     const photoURL = form.photoURL.value;
-
+ 
     setSuccess("");
     setError("");
     
@@ -33,12 +49,23 @@ const Profile = () => {
       photoURL: photoURL
     }).then(() => {
       console.log("Profile updated!");
+      const userInfo = {
+        name: name,
+        email: currentUserEmail,
+        university: university,
+        address: address,
+        photoURL: photoURL
+      }
+      // console.log(userInfo);
+      updateUser(userInfo);
+      refetch();
       setSuccess("Profile updated!");
       toast.success("Profile updated!");
       setLoading(false);
       form.reset();
       navigate("/profile");
     }).catch((error) => {
+      refetch();
       setError(error.message);
       toast.error("Something went wrong!");
       setLoading(false);
@@ -47,7 +74,7 @@ const Profile = () => {
   };
 
   return (
-    <section className="max-w-lg mx-auto mt-4 lg:mt-20 p-4">
+    <section className="max-w-4xl mx-auto mt-4 lg:mt-20 p-4">
 
       <ReactHelmet documentTitle="College Connect | Profile" metaDescription="Profile"></ReactHelmet>
 
@@ -75,13 +102,40 @@ const Profile = () => {
 
         <form onSubmit={handleProfileUpdate}>
           <div className="!px-6 md:!px-8 !pt-2 card-body mb-6 md:mb-8">
-            <div className="form-control">
-              <label className="label pl-0" htmlFor="name">
-                <span className="label-text text-lg">Name</span>
-              </label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={currentUserName} />
-              <p className="text-red-500 mt-2"></p>
+            <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="form-control">
+                <label className="label pl-0" htmlFor="name">
+                  <span className="label-text text-lg">Name</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={currentUserName} />
+                <p className="text-red-500 mt-2"></p>
+              </div>
+              <div className="form-control">
+                <label className="label pl-0" htmlFor="email">
+                  <span className="label-text text-lg">Email</span>
+                </label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={currentUserEmail} />
+                <p className="text-red-500 mt-2"></p>
+              </div>
             </div>
+            
+            <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="form-control">
+                <label className="label pl-0" htmlFor="university">
+                  <span className="label-text text-lg">University</span>
+                </label>
+                <input type="text" id="university" name="university" placeholder="Enter your university name" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={userData.university} />
+                <p className="text-red-500 mt-2"></p>
+              </div>
+              <div className="form-control">
+                <label className="label pl-0" htmlFor="address">
+                  <span className="label-text text-lg">Address</span>
+                </label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={userData.address} />
+                <p className="text-red-500 mt-2"></p>
+              </div>
+            </div>
+
             <div className="form-control">
               <label className="label pl-0" htmlFor="photoURL">
                 <span className="label-text text-lg">Photo URL</span>
@@ -89,6 +143,7 @@ const Profile = () => {
               <input type="text" id="photoURL" name="photoURL" placeholder="Enter your photo url" className="input input-bordered input-accent focus:ring-0 focus:border-teal-500 read-only:bg-slate-100" defaultValue={currentUserPhotoURL ? currentUserPhotoURL : ""} />
               <p className="text-red-500 mt-2"></p>
             </div>
+
             <div className="form-control mt-4">
               {/* <button className="btn text-lg" type="submit">Update</button> */}
               <button type="submit" className="text-white bg-gradient-to-br from-teal-500 to-teal-600 ring-2 ring-offset-1 ring-teal-500 transition-all hover:duration-300 hover:from-teal-600 hover:to-teal-700 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-blue-200 dark:focus:ring-teal-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center">Update</button>
