@@ -1,13 +1,13 @@
+import { useEffect } from "react";
 import Aos from "aos";
 import ReactHelmet from "../../components/reactHelmet";
 import HomeBanner from './HomeBanner';
-import HomeCarousel from './HomeCarousel/HomeCarousel';
-import { useEffect } from "react";
-import Statistics from "./Statistics";
-import Newsletter from "./Newsletter";
-import Testimonial from "./Testimonial";
-import PopularInstructors from "./PopularInstructors/PopularInstructors";
+import SearchColleges from "./SearchColleges/SearchColleges";
 import FeaturedColleges from "./FeaturedColleges/FeaturedColleges";
+import HomeCarousel from './HomeCarousel/HomeCarousel';
+// import Statistics from "./Statistics";
+import Testimonial from "./Testimonial/Testimonial";
+import Newsletter from "./Newsletter";
 
 
 const Home = () => {
@@ -24,16 +24,15 @@ const Home = () => {
       {/* Home Page Banner */}
       <HomeBanner></HomeBanner>
 
+      {/* Search Colleges */}
+      <SearchColleges></SearchColleges>
+
       {/* Featured Colleges */}
       <FeaturedColleges></FeaturedColleges>
 
       {/* Home Carousel */}
       <HomeCarousel></HomeCarousel>
       
-      
-      {/* Popular Instructors */}
-      {/* <PopularInstructors></PopularInstructors> */}
-
       {/* Statistics */}
       {/* <Statistics></Statistics> */}
 

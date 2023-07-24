@@ -1,24 +1,34 @@
-import { Link } from "react-router-dom";
+import { MdInfo } from 'react-icons/md';
 import LazyLoad from 'react-lazy-load';
+import { Link } from 'react-router-dom';
 
-const PopularInstructorsCard = ({ popularInstructor }) => {
+const SearchCollegeCard = ({ searchCollege }) => {
 
-  const { email, name, photo_url } = popularInstructor || {};
-
+  const { _id, college_image, college_name, admission_date, events_details, research_history, sports_details } = searchCollege || {};
+            
   return (
-    <div className="flex card card-compact w-full bg-base-100 box-shadow-custom group" data-aos="zoom-in">
+    <div className={`flex card card-compact w-full bg-base-100 custom-box-shadow group`} data-aos="zoom-in">
       <LazyLoad offset={500}>
         <figure className='rounded-t-xl'>
-          <img className='overflow-hidden h-96 w-full object-cover rounded-t-xl transition duration-300 group-hover:scale-110' src={photo_url} alt={`${name}'s Image`} />
+          <img className='overflow-hidden h-80 w-full object-cover rounded-t-xl transition duration-300 group-hover:scale-110' src={college_image} alt={`${college_name} Image`} />
         </figure>
       </LazyLoad>
       <div className='border-t border-slate-300 mb-1'></div>
       <div className="flex-1 p-4 pt-4 pb-0">
-        <h3 className='text-center text-xl text-slate-700 font-bold'>{name}</h3>
-        <p className='font-medium text-sm text-center mt-2 mb-2 text-slate-600'>{email}</p>
+        <h3 className='text-center text-2xl text-slate-700 font-bold'>{college_name}</h3>
+        {/* <h4 className='text-center text-lg text-slate-500 font-semibold mt-2'>{instructor_name}</h4> */}
+        <p className='font-medium text-md text-left mt-3 mb-1 text-slate-600'><span className="font-bold">Admission Date:</span> {admission_date}</p>
+        <p className='font-medium text-md text-left mt-1 mb-1 text-slate-600'><span className="font-bold">Events:</span> <ul className="list-disc">{events_details.map((detail, index) => <li className="ml-5" key={index}>{detail.eventName}</li>)}</ul></p>
+        <p className='font-medium text-md text-left mt-1 mb-1 text-slate-600'><span className="font-bold">Sports:</span> <ul className="list-disc">{sports_details.map((detail, index) => <li className="ml-5" key={index}>{detail.sportName}</li>)}</ul></p>
+        <p className='font-normal text-md text-left mt-2 mb-2 text-slate-600'><span className="font-bold">Research History:</span> {research_history}</p>
       </div>
       <div className='border-t border-slate-300 my-4'></div>
-      <div className="p-4 pt-0">
+      <Link to={`/college/${_id}`} className="flex mt-2 mb-4 w-fit mx-auto items-center justify-center p-0.5 overflow-hidden text-lg font-semibold text-teal-700 rounded-lg bg-gradient-to-br from-teal-600 to-teal-500 hover:from-teal-600 hover:to-teal-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800">
+        <span className="flex items-center justify-center w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md hover:bg-opacity-0">
+          <MdInfo className="mr-2 self-center" /> Details
+        </span>
+      </Link>
+      {/* <div className="p-4 pt-0">
         <div className='flex items-center justify-center'>
           <div className="grid grid-flow-col gap-4">
             <Link to="https://www.facebook.com" data-tip="Facebook" className="tooltip tooltip-bottom cursor-pointer transition duration-200 transform hover:-translate-y-2 text-teal-600 border-2 border-teal-400 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></Link>
@@ -26,9 +36,9 @@ const PopularInstructorsCard = ({ popularInstructor }) => {
             <Link to="https://www.instagram.com" data-tip="Instagram" className="tooltip tooltip-bottom cursor-pointer transition duration-200 transform hover:-translate-y-2 text-teal-600 border-2 border-teal-400 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default PopularInstructorsCard;
+export default SearchCollegeCard;

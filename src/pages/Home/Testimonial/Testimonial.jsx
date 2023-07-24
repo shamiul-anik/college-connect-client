@@ -1,11 +1,11 @@
 import { Rating } from "@smastrom/react-rating";
-import SectionTitle from "../../components/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { BiSolidQuoteLeft } from 'react-icons/bi';
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 
 // Import Swiper styles
 import 'swiper/css';

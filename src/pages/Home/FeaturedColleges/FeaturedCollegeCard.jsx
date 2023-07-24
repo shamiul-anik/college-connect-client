@@ -2,7 +2,7 @@ import { MdInfo } from 'react-icons/md';
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
-const PopularClassCard = ({ featuredCollege }) => {
+const FeaturedCollegeCard = ({ featuredCollege }) => {
 
   const { _id, college_image, college_name, admission_date, events_details, research_history, sports_details } = featuredCollege || {};
             
@@ -41,4 +41,4 @@ const PopularClassCard = ({ featuredCollege }) => {
   );
 };
 
-export default PopularClassCard;
+export default FeaturedCollegeCard;
