@@ -82,6 +82,30 @@ const ViewToy = () => {
 
             <div className='divider my-0'></div>
 
+            {/* <div className="grid gap-x-4 gap-y-2 md:grid-cols-2"> */}
+            <div className="form-control">
+              <label className="label pl-0" htmlFor="featured">
+                <span className="label-text text-lg md:text-xl font-semibold">Events</span>
+              </label>
+              <ul className="list-disc">
+                {events_details.map((detail, index) => <li className="ml-5 text-lg text-slate-500" key={index}> <span className="font-semibold">{detail?.eventName}</span> : {detail?.description}</li>)}
+              </ul>
+            </div>
+
+            <div className='divider my-0'></div>
+
+            <div className="form-control">
+              <label className="label pl-0" htmlFor="rating">
+                <span className="label-text text-lg md:text-xl font-semibold">Sports</span>
+              </label>
+              <ul className="list-disc">
+                {sports_details.map((detail, index) => <li className="ml-5 text-lg text-slate-500" key={index}> <span className="font-semibold">{detail?.sportName}</span> : {detail?.facilities}</li>)}
+              </ul>
+            </div>
+            {/* </div> */}
+
+            <div className='divider my-0'></div>
+
             <div className="grid gap-x-4 gap-y-2 md:grid-cols-2">
               <div className="form-control">
                 <label className="label pl-0" htmlFor="rating">
@@ -97,12 +121,7 @@ const ViewToy = () => {
               </div>
             </div>
 
-            {/* <div className="form-control">
-              <label className="label pl-0" htmlFor="description">
-                <span className="label-text text-lg md:text-xl font-semibold">Description</span>
-              </label>
-              <p className='text-lg text-slate-500 mb-2'>{description}</p>
-            </div> */}
+            
 
           </div>
 

@@ -47,8 +47,8 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/college/:id",
-				element: <Suspense fallback={<Loader></Loader>}><ViewCollege></ViewCollege></Suspense>,
-				// element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><ViewCollege></ViewCollege></PrivateRoute></Suspense>,
+				// element: <Suspense fallback={<Loader></Loader>}><ViewCollege></ViewCollege></Suspense>,
+				element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><ViewCollege></ViewCollege></PrivateRoute></Suspense>,
 				loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/college/${params.id}`)
 			},
 			// {
