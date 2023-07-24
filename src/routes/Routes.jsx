@@ -9,6 +9,7 @@ const ErrorPage = lazy(() => import("../pages/shared/ErrorPage/ErrorPage"));
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const Colleges = lazy(() => import("../pages/Colleges/Colleges"));
+const ViewCollege = lazy(() => import("../pages/ViewCollege/ViewCollege"));
 // const Classes = lazy(() => import("../pages/Classes/Classes"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 // const About = lazy(() => import("../pages/About/About"));
@@ -18,7 +19,7 @@ const Contact = lazy(() => import("../pages/Contact/Contact"));
 // const PasswordReset = lazy(() => import("../pages/Authentication/PasswordReset/PasswordReset"));
 // const Profile = lazy(() => import("../pages/Authentication/Profile/Profile"));
 
-// const PrivateRoute = lazy(() => import("./PrivateRoute"));
+const PrivateRoute = lazy(() => import("./PrivateRoute"));
 // const AdminRoute = lazy(() => import("./AdminRoute"));
 
 // const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
@@ -44,10 +45,12 @@ export const router = createBrowserRouter([
 				path: '/colleges',
 				element: <Suspense fallback={<Loader></Loader>}><Colleges></Colleges></Suspense>,
 			},
-			// {
-			// 	path: '/classes',
-			// 	element: <Suspense fallback={<Loader></Loader>}><Classes></Classes></Suspense>,
-			// },
+			{
+				path: "/college/:id",
+				element: <Suspense fallback={<Loader></Loader>}><ViewCollege></ViewCollege></Suspense>,
+				// element: <Suspense fallback={<Loader></Loader>}><PrivateRoute><ViewCollege></ViewCollege></PrivateRoute></Suspense>,
+				loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/college/${params.id}`)
+			},
 			// {
 			// 	path: 'login',
 			// 	element: <Suspense fallback={<Loader></Loader>}><Login></Login></Suspense>
