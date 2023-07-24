@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { toast } from 'react-toastify';
@@ -59,6 +59,27 @@ const Login = () => {
 				}
 				saveUser(userInfo);
 
+				toast.success("Successfully logged in!");
+				navigate(from, { replace: true })
+			})
+			.catch(error => {
+				setError(error.message);
+				setLoading(false);
+			})
+	};
+
+	// GitHub Login
+	const handleGitHubLogin = () => {
+		signInWithGitHub()
+			.then(result => {
+				const currentUser = result.user;
+				// console.log(currentUser);
+				const userInfo = {
+					email: currentUser.email,
+					displayName: currentUser.displayName,
+					photoURL: currentUser.photoURL
+				}
+				saveUser(userInfo);
 				toast.success("Successfully logged in!");
 				navigate(from, { replace: true })
 			})
@@ -147,6 +168,12 @@ const Login = () => {
 						<button onClick={handleGoogleLogin} className="relative flex w-100 items-center justify-center p-0.5 overflow-hidden text-lg font-semibold text-blue-700 rounded-lg group bg-gradient-to-br from-blue-600 to-blue-500 group-hover:from-blue-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
 							<span className="flex items-center justify-center w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 								<FaGoogle className="mr-2 self-center" /> Login with Google
+							</span>
+						</button>
+						
+						<button onClick={handleGitHubLogin} className="mt-2 relative flex w-100 items-center justify-center p-0.5 overflow-hidden text-lg font-semibold text-slate-700 rounded-lg group bg-gradient-to-br from-slate-600 to-slate-500 group-hover:from-slate-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-slate-300 dark:focus:ring-slate-800">
+							<span className="flex items-center justify-center w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+								<FaGithub className="mr-2 self-center" /> Login with GitHub
 							</span>
 						</button>
 					</div>

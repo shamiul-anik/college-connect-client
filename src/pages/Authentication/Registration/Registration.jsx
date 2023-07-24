@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { FaGoogle, FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
+import { FaGoogle, FaRegEyeSlash, FaRegEye, FaGithub } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useForm } from "react-hook-form";
@@ -78,9 +78,29 @@ const Registration = () => {
 		});
 	};
 
-	// Google Login
+	// Google Registration
 	const handleGoogleRegistration = () => {
 		signInWithGoogle()
+			.then(result => {
+				const currentUser = result.user;
+				// console.log(currentUser);
+				const userInfo = {
+					email: currentUser.email,
+					displayName: currentUser.displayName,
+					photoURL: currentUser.photoURL
+				}
+				saveUser(userInfo);
+				toast.success("Successfully registered!");
+				navigate("/");
+			})
+			.catch(error => {
+				setError(error.message);
+			})
+	};
+
+	// GitHub Registration
+	const handleGitHubRegistration = () => {
+		signInWithGitHub()
 			.then(result => {
 				const currentUser = result.user;
 				// console.log(currentUser);
@@ -243,6 +263,12 @@ const Registration = () => {
 						<button onClick={handleGoogleRegistration} className="relative flex w-100 items-center justify-center p-0.5 overflow-hidden text-lg font-semibold text-blue-700 rounded-lg group bg-gradient-to-br from-blue-600 to-blue-500 group-hover:from-blue-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
 							<span className="flex items-center justify-center w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 								<FaGoogle className="mr-2 self-center" /> Register with Google
+							</span>
+						</button>
+						
+						<button onClick={handleGitHubRegistration} className="mt-2 relative flex w-100 items-center justify-center p-0.5 overflow-hidden text-lg font-semibold text-slate-700 rounded-lg group bg-gradient-to-br from-slate-600 to-slate-500 group-hover:from-slate-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-slate-300 dark:focus:ring-slate-800">
+							<span className="flex items-center justify-center w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+								<FaGithub className="mr-2 self-center" /> Register with GitHub
 							</span>
 						</button>
 					</div>

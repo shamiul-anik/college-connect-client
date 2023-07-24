@@ -39,16 +39,16 @@ https://college-connect-server-production.up.railway.app/
 <ol>
   <li>Full project is made with responsive design for smartphone, tablet and PC.</li>
   <li>A Navbar with navigation options, profile picture when logged in and a login button. Active styles for different routes on the Navbar also added.</li>
-  <!-- <li>- 3. Homepage with a Carousel, Popular Instructors, Popular Classes, Statistics, Testimonials, Upcoming Course and Newsletter sections. Here Statistics, Testimonials, Upcoming Course and Newsletter are extra sections added as per the requirements. -->
+  <li>Homepage with Search functionality, Featured College, Testimonials, and Newsletter sections added as per the requirements.</li>
   <li>Lazy image loading feature implemented for better performance and user experience.</li>
-  <!-- <li>- 5. Clicking on the Select Class button will add booking class information in the database. -->
+  <li>Clicking on the Details button will show details college information from the database.</li>
   <li>An Error handling (404) page with error message and animated text and image added for error handling.</li>
   <li>Dashboard added for Admin.</li>
   <li>Dynamic title on the tab added which changes with the menu using custom hook.</li>
   <li>Used Railway for server side deployment. (As vercel has some issue regarding data loading)</li>
   <li>When reloaded page not found error handling for different routes and live server.</li>
   <li>Toast alerts for various user activities.</li>
-  <li>Swiperjs for showing reviews with custom design.</li>
+  <li>Swiper for showing reviews with custom design.</li>
   <li>User's Name and Photo URL update functionality added when registering with email and password. --></li>
   <li>React Icons added.</li>
   <li>Show/Hide password feature added in Login and Registration page.</li>
